@@ -2,7 +2,9 @@
 
 ## State
 Project complete: v1.0 is the reproducible default, plus an **opt-in v2** upgrade
-(MASTER_PROMPT_v4) on branch `v2-upgrade`. v1 tags `v0.1-frozen-params` / `v1.0` are
+(MASTER_PROMPT_v4). The `v2-upgrade` branch exists only on the upstream repo
+(`AtulTejaswi/adaptive-fog-density-dehazing`) and points at the same commit as `main`;
+the v2 code ships on `main` behind the `params.v2.*` flags. v1 tags `v0.1-frozen-params` / `v1.0` are
 untouched. v2 params were frozen at `v2.0-frozen-params` before the first v2 test run;
 final deliverable tag `v2.0`. 83 tests pass, including a bit-exact flags-off v1
 compatibility test (`tests/test_v2_compat.py`). v2 is **not** an aggregate win over v1:
