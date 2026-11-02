@@ -58,10 +58,13 @@ python scripts/download_data.py && python scripts/download_rtts.py
 python scripts/prepare_data.py --no-download
 
 # 3. calibrate -> tune -> evaluate -> ablate -> figures -> report -> tests
-./run_all.ps1 --no-download
+./run_all.ps1 --no-download                                    # Windows (PowerShell)
+source .venv/bin/activate && ./scripts/run_all.sh --no-download  # Linux/macOS
 ```
 
-Or run the stages individually:
+Or run the stages individually. On Linux/macOS activate the environment first
+(`source .venv/bin/activate`) so the bare `python`/`pip` below resolve to the venv;
+on Windows run them in an activated venv or just use `run_all.ps1`.
 
 ```bash
 pip install -r requirements.txt
@@ -81,7 +84,8 @@ python -m pytest                        # full test suite (83 tests)
 Demo:
 
 ```bash
-streamlit run app/app.py
+streamlit run app/app.py             # with the venv activated
+.venv/bin/streamlit run app/app.py   # without activating
 ```
 
 ## Run locally on Linux/macOS
@@ -111,6 +115,15 @@ python3 -m venv .venv
 `scripts/run_all.sh` and `scripts/run_all_v2.sh` mirror `run_all.ps1` /
 `run_all_v2.ps1` step for step and call `.venv/bin/python` by default (override with
 `PYTHON=/path/to/python`).
+
+`scripts/run_all.sh` is the canonical Linux/macOS entry point. The older root-level
+`run_all.sh` is kept for history but omits `audit_baseline.py` and calls a bare `python`;
+prefer `./scripts/run_all.sh`.
+
+Both `run_all.sh` and `run_all_v2.sh` **regenerate and overwrite** `results/` (and
+`config/calibration.json`, `config/tuned_params.json`, `data/splits.json`). Run
+`git status` and `git diff --stat` afterwards, and do not commit regenerated artifacts
+unless that is the intent.
 
 ## Data
 
