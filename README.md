@@ -84,6 +84,34 @@ Demo:
 streamlit run app/app.py
 ```
 
+## Run locally on Linux/macOS
+
+Verified on Ubuntu with Python 3.14 in `.venv`: real SOTS + RTTS download, splits,
+the v1 pipeline and the demo all run from these commands.
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+
+# data (see data/README.md): ~435 MB SOTS zip + 72 RTTS images
+.venv/bin/python scripts/download_data.py
+.venv/bin/python scripts/download_rtts.py
+.venv/bin/python scripts/prepare_data.py --no-download
+
+# check that every path in data/splits.json resolves (read-only)
+.venv/bin/python scripts/check_data.py
+
+# full v1 pipeline; scripts/run_all_v2.sh is the v2 equivalent
+./scripts/run_all.sh --no-download
+
+# demo
+.venv/bin/streamlit run app/app.py
+```
+
+`scripts/run_all.sh` and `scripts/run_all_v2.sh` mirror `run_all.ps1` /
+`run_all_v2.ps1` step for step and call `.venv/bin/python` by default (override with
+`PYTHON=/path/to/python`).
+
 ## Data
 
 * **SOTS / RESIDE** — 542 unique hazy/clear pairs from indoor + outdoor SOTS.
