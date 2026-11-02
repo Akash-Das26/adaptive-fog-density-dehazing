@@ -3,9 +3,9 @@
 > **Headline result:** v1 — SOTS PSNR **18.78 dB / SSIM 0.8896**. The opt-in v2 pipeline is a
 > documented **negative** result (18.45 dB / 0.8873) and is not the number to quote as the headline.
 
-> Canonical project repository: `github.com/AtulTejaswi/adaptive-fog-density-dehazing`. This fork
-> (`Akash-Das26/adaptive-fog-density-dehazing`) adds only the CI workflow
-> (`.github/workflows/ci.yml`); all method, results and report work is the team's original work.
+> Canonical project repository: `github.com/AtulTejaswi/adaptive-fog-density-dehazing`. The CI
+> workflow (`.github/workflows/ci.yml`) was contributed by Akash-Das26; all method, results and
+> report work is the team's original work.
 
 Course project for **Image Processing & Analysis (IPA)**. **FogSense** is a classical,
 explainable multi-algorithm framework that first *estimates haze density* from image
