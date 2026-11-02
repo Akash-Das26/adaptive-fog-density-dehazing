@@ -5,7 +5,7 @@ Date: 2026-10-19. This file records the A–E verification requested in
 boundary was preserved.
 
 ## A. Repo / GitHub integrity
-- Remote: `https://github.com/AtulTejaswi/adaptive-fog-density-dehazing` (private).
+- Remote: `https://github.com/AtulTejaswi/adaptive-fog-density-dehazing` (private at the time of writing; now public).
 - Local history preserved; `save_progress.sh` commits and pushes.
 - Tags: `v0.1-frozen-params` (parameters frozen before any test evaluation) and
   `v1.0` (final verified deliverables, retagged on the final commit).

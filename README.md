@@ -1,5 +1,12 @@
 # FogSense: An Intelligent Multi-Algorithm Framework for Adaptive Haze Removal
 
+> **Headline result:** v1 — SOTS PSNR **18.78 dB / SSIM 0.8896**. The opt-in v2 pipeline is a
+> documented **negative** result (18.45 dB / 0.8873) and is not the number to quote as the headline.
+
+> Canonical project repository: `github.com/AtulTejaswi/adaptive-fog-density-dehazing`. The CI
+> workflow (`.github/workflows/ci.yml`) was contributed by Akash-Das26; all method, results and
+> report work is the team's original work.
+
 Course project for **Image Processing & Analysis (IPA)**. **FogSense** is a classical,
 explainable multi-algorithm framework that first *estimates haze density* from image
 statistics, then adapts the dehazing strength and enhancement strategy to that density.
@@ -117,8 +124,7 @@ See:
   proof the fixed DCP baseline is not handicapped.
 * `results/figures/` — qualitative grids (SOTS + real RTTS), transmission maps,
   score-vs-beta, metrics by class, failure cases.
-* `results/FINALIZATION_AUDIT.md` — v1 + v2 verification record.
-* `report/report.md` — full report.
+* `results/FINALIZATION_AUDIT.md` — v1 + v2 verification record.  * `report/report.md` — full report.
 * `report/FogSense_slides.pptx` - 22-slide presentation deck with speaker notes.
 * `report/FogSense_report.pdf` - printable version of the report.
 * `report/FogSense_Project_Report.docx` - single-file submission report (title, abstract, approach, results, conclusion, references and appendices).
